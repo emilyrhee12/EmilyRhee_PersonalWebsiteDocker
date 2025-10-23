@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Projects — Emily Rhee{% endblock %}
+{% block content %}
+<h2>Projects</h2>
+{% if projects %}
+<table style="width:100%;border-collapse:collapse">
+<thead><tr><th>Image</th><th>Title</th><th>Description</th><th>Actions</th></tr></thead>
+<tbody>
+{% for id, title, description, image in projects %}
+<tr>
+  <td style="padding:.5rem">
+    <a href="{{ url_for('static', filename='images/' ~ image) }}" target="_blank" rel="noopener">
+      <img src="{{ url_for('static', filename='images/' ~ image) }}" alt="Screenshot of {{ title }}" style="max-width:220px;height:auto">
+    </a>
+    <div style="color:#777;font-size:.9rem">{{ image }}</div>
+  </td>
+  <td style="padding:.5rem"><strong>{{ title }}</strong></td>
+  <td style="padding:.5rem">{{ description }}</td>
+  <td style="padding:.5rem">
+    <form action="{{ url_for('delete_project', project_id=id) }}" method="post" onsubmit="return confirm('Delete this project?')">
+      <button type="submit">Delete</button>
+    </form>
+  </td>
+</tr>
+{% endfor %}
+</tbody></table>
+{% else %}
+<p>No projects yet. Add one on the <a href="{{ url_for('add_project') }}">Add Project</a> page.</p>
+{% endif %}
+{% endblock %}

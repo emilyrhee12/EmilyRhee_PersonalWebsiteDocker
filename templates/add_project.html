@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Add Project — Emily Rhee{% endblock %}
+{% block content %}
+<h2>Add a Project</h2>
+{% with messages = get_flashed_messages(with_categories=true) %}
+  {% if messages %}
+    {% for category, msg in messages %}
+      <div style="padding:.5rem;border:1px solid #ddd;margin:.5rem 0;border-color:{% if category=='error' %}#ef4444{% else %}#22c55e{% endif %}">{{ msg }}</div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+<form action="{{ url_for('add_project') }}" method="post" style="display:grid;gap:1rem;max-width:720px">
+  <label>Title <input name="Title" required></label>
+  <label>Description <textarea name="Description" rows="4" required></textarea></label>
+  <label>Image File Name <input name="ImageFileName" required placeholder="CPA_Assignment.png"></label>
+  <button type="submit">Add Project</button>
+  <p style="color:#777">Place your image files into <code>static/images/</code> first.</p>
+</form>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}Home — Emily Rhee{% endblock %}
+{% block content %}
+<section style="display:grid;grid-template-columns:1.2fr .8fr;gap:1rem;align-items:center">
+  <div>
+    <h1>Hi, I'm Emily Rhee 👋</h1>
+    <p>I design and build user-centered products. Explore my projects and experience.</p>
+    <p><a href="{{ url_for('projects') }}">See projects →</a></p>
+  </div>
+  <div>
+    <img src="{{ url_for('static', filename='images/IMG_0280.jpeg') }}" alt="Smiling headshot of Emily Rhee" style="max-width:360px;border-radius:1rem">
+  </div>
+</section>
+{% endblock %}

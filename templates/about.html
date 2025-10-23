@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}About — Emily Rhee{% endblock %}
+{% block content %}
+<section style="display:grid;grid-template-columns:1fr 320px;gap:1.25rem;align-items:start;">
+	<div>
+		<h2 style="margin-top:0">About Me</h2>
+		<p>I'm Emily Rhee — a UX & product designer who cares about building accessible, thoughtful experiences that make complex tools feel simple. I blend research, design, and product thinking to ship measurable improvements. I enjoy mentoring students, collaborating with engineers, and iterating quickly with users.</p>
+
+		<h3 style="margin-top:1rem">Fun facts</h3>
+		<ul>
+			<li>I play tennis competitively and love a good match or practice session.</li>
+			<li>I'm a drummer — I play both acoustic and electronic kits.</li>
+			<li>I used to tour around Chicago with my band — we played small venues and college shows.</li>
+		</ul>
+
+		<h3 style="margin-top:1rem">Interests</h3>
+		<p>Human‑computer interaction, accessibility, product strategy, and research-driven design.</p>
+	</div>
+
+	<aside style="text-align:center">
+		<img src="{{ url_for('static', filename='images/IMG_0280.jpeg') }}" alt="Headshot of Emily Rhee" style="width:100%;max-width:300px;border-radius:12px;box-shadow:0 6px 18px rgba(15,23,42,0.08)">
+		<div style="margin-top:12px;background:#f8fafc;border-radius:8px;padding:10px;text-align:left">
+			<strong>Contact</strong>
+			<div style="font-size:0.95rem;margin-top:6px">Bloomington, IN · open to Chicago / remote</div>
+			<div style="margin-top:6px"><a href="mailto:emrhee@iu.edu">emrhee@iu.edu</a></div>
+		</div>
+	</aside>
+</section>
+{% endblock %}
